@@ -1,1 +1,11 @@
-<h4>Weather: {{(weather$ | async)}}</h4>
+<h4>Weather for Saskatoon:</h4>
+<div *ngIf="weather$ | async as weatherData">
+  <ul>
+    <li>Temperature: {{weatherData.temp}}</li>
+    <li>Low: {{weatherData.minTemp}}</li>
+    <li>High: {{weatherData.maxTemp}}</li>
+    <li>Wind: {{weatherData.wind}}</li>
+    <li>Sunrise: {{weatherData.sunrise}}</li>
+    <li>Sunset: {{weatherData.sunset}}</li>
+  </ul>
+</div>

@@ -1,5 +1,5 @@
 import {Component, OnDestroy, OnInit} from '@angular/core';
-import {WeatherService} from '../weather.service';
+import {WeatherData, WeatherService} from '../weather.service';
 import {Observable, Subscription} from 'rxjs';
 
 @Component({
@@ -8,7 +8,7 @@ import {Observable, Subscription} from 'rxjs';
   styleUrls: ['./home.component.scss']
 })
 export class HomeComponent implements OnInit, OnDestroy {
-  weather$: Observable<any>;
+  weather$: Observable<WeatherData>;
   subscriptions: Subscription[];
 
   constructor(private weatherService: WeatherService) {
@@ -16,7 +16,6 @@ export class HomeComponent implements OnInit, OnDestroy {
 
   ngOnInit() {
     this.weather$ = this.weatherService.getWeatherByCity('Saskatoon');
-    this.weather$.subscribe(console.log);
   }
 
   ngOnDestroy(): void {
