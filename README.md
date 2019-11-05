@@ -1,5 +1,7 @@
 # Weather2
 
+A project using OpenWeatherApi that will display weather data. Development is currently ongoing.
+
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 8.3.5.
 
 ## Development server
