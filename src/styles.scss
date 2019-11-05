@@ -1,1 +1,16 @@
-/* You can add global styles to this file, and also import other style files */
+// Custom Theming for Angular Material
+
+@import '~@angular/material/theming';
+@include mat-core();
+
+$weather2-primary: mat-palette($mat-blue-gray);
+$weather2-accent: mat-palette($mat-yellow);
+$weather2-warn: mat-palette($mat-red);
+
+// Create the theme object (a Sass map containing all of the palettes).
+$weather2-theme: mat-light-theme($weather2-primary, $weather2-accent, $weather2-warn);
+
+@include angular-material-theme($weather2-theme);
+
+html, body { height: 100%; }
+body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
